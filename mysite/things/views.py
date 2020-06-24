@@ -5,6 +5,7 @@ from .models import Thing
 
 
 def index(request):
+    latest_thing_list = Thing.objects.order_by('-pub_date')[:10]
     return render(request,'things/index.html')
 
 def create(request):
