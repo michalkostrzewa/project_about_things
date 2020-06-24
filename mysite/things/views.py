@@ -1,10 +1,11 @@
 from django.shortcuts import render
 
 from django.http import HttpResponse
+from .models import Thing
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the things index.")
+    return render(request,'things/index.html')
 
 def create(request):
     return HttpResponse("create thing")
